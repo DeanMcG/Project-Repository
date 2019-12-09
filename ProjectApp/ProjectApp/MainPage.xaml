@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ProjectApp"
+             x:Class="ProjectApp.MainPage" BackgroundColor="Orange">
+
+    <!--Stack Layout Encompassing All Stopwatch Code-->
+    <StackLayout x:Name="AllStopwatchContent" Padding="50">
+
+        <!-- Label For Title "Running Timer"-->
+        <Label x:Name="Title" TextColor="White" FontSize="32" HorizontalOptions="Center">Running Timer</Label>
+
+        <!-- Label For Actual Numbers/Timer Of The Stopwatch -->
+        <Label x:Name="lblStopwatch" FontSize="50" TextColor="White"
+               HorizontalOptions="CenterAndExpand" 
+               VerticalOptions="CenterAndExpand">
+            00:00:00:0000
+        </Label>
+
+        <!-- Button To Start/Resume Stopwatch-->
+        <Button x:Name="btnStart" Clicked="BtnStart_Clicked" Text="Start" 
+                TextColor="White" Opacity="100"  BackgroundColor="Green" 
+                WidthRequest="500" HorizontalOptions="Center"></Button>
+
+        <!-- Button To Stop Stopwatch-->
+        <Button x:Name="btnStop" Text="Stop" Clicked="BtnStop_Clicked"
+                TextColor="White" Opacity="100"  BackgroundColor="Red" 
+                WidthRequest="500" HorizontalOptions="Center"></Button>
+
+        <!-- Button To Reset The Stopwatch -->
+        <Button x:Name="btnReset" Text="Reset" Clicked="BtnReset_Clicked"
+                TextColor="White" Opacity="100"  BackgroundColor="Yellow" 
+                WidthRequest="500" HorizontalOptions="Center"></Button>
+        
+        <!-- Stack Layout That Encompasses All Content For The Calorie Tracking Section-->
+        <StackLayout x:Name="CalorieTracker" Padding="20">
+
+            <!--Label For Title "Calorie Tracker" -->
+            <Label x:Name="CalorieTitle" FontSize="32" TextColor="White" 
+                   HorizontalOptions="Center">Calorie Tracker</Label>
+            
+            <!--Label For "Enter Minutes Ran" Prompt -->
+            <Label x:Name="calTitle" FontSize="20" TextColor="White" 
+                   HorizontalOptions="Center">Enter Minutes Ran: </Label>
+
+            <!--Entry Box For Amount Of Minutes Ran-->
+            <Entry x:Name="minutesEntered" VerticalOptions="Start" HorizontalOptions="Center" 
+                   WidthRequest="500" MaxLength="5" 
+                   Keyboard="Numeric" Placeholder="0000"></Entry>
+
+            <!--Button To Initiate Calculation Of Calories Burned-->
+            <Button x:Name="calculateCalories" Text="Calculate Calories Burned" HorizontalOptions="Center" 
+                    TextColor="White" Opacity="100"  BackgroundColor="SteelBlue" WidthRequest="500"
+                    Clicked="CalculateCalories_Clicked"></Button>
+
+            <!--Label To Display Calculated Amount Of Calories Burned-->
+            <Label x:Name="calAnswer" Text="Your Calories Burned Is: " 
+                   HorizontalOptions="Center" TextColor="White" FontSize="20"></Label>
+        
+        </StackLayout>
+
+    </StackLayout>
+
+    
+
+
+</ContentPage>
